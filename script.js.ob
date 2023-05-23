@@ -1,0 +1,110 @@
+// ------------------
+//      Zadanie 1
+// ------------------
+function CongratulateWithSilvester ( type, n = 10, ) {
+    let i = 0
+    switch ( type ) {
+        case "for":
+            for ( i; i < n; n-- ) {
+                console.log( n );
+            };
+            break;
+        case "while":
+            while ( n ) {
+                console.log( n );
+                n--;
+            }
+            break;
+    }
+    console.log( "Happy New Year!" );
+}
+
+CongratulateWithSilvester( "while" )
+
+
+
+// ------------------
+//      Zadanie 2
+// ------------------
+function nwd ( a, b ) {
+    if ( b === 0 ) {
+        return a;
+    } else {
+        return nwd( b, a % b );
+    }
+}
+
+function ReturnNWDToHtml () {
+
+    const a = document.getElementById( "n1" ).value;
+    const b = document.getElementById( "n2" ).value;
+
+    const res = nwd( a, b );
+
+    document.getElementById( "resultNWD" ).innerHTML = `NWD = (${ a }, ${ b }) = ${ res }`;
+}
+
+
+
+// ------------------
+//      Zadanie 3
+// ------------------
+class Calculator {
+    static add ( a, b ) { return a + b; }
+    static subtract ( a, b ) { return a - b; }
+    static multiply ( a, b ) { return a * b; }
+    static division ( a, b ) { return a / b; }
+    static pow ( a, b ) { return Math.pow( a, b ); }
+}
+
+function oblicz () {
+    const liczba1 = parseInt( document.getElementById( "liczba1" ).value );
+    const liczba2 = parseInt( document.getElementById( "liczba2" ).value );
+    const operacja = document.getElementById( "operacja" ).value;
+    let wynik = 0;
+
+    switch ( operacja ) {
+        case "add":
+            wynik = Calculator.add( liczba1, liczba2 );
+            break;
+        case "subtract":
+            wynik = Calculator.subtract( liczba1, liczba2 );
+            break;
+        case "multiply":
+            wynik = Calculator.multiply( liczba1, liczba2 );
+            break;
+        case "division":
+            wynik = Calculator.division( liczba1, liczba2 );
+            break;
+        case "pow":
+            wynik = Calculator.pow( liczba1, liczba2 );
+            break;
+        default:
+            alert( "Invalid operation" );
+    }
+
+    document.getElementById( "wynik" ).value = wynik;
+}
+
+
+
+// ------------------
+//      Zadanie 4
+// ------------------
+function updateClock () {
+    let now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    // Template 00:00:00
+    hours = ( hours < 10 ? "0" : "" ) + hours;
+    minutes = ( minutes < 10 ? "0" : "" ) + minutes;
+    seconds = ( seconds < 10 ? "0" : "" ) + seconds;
+
+    let timeString = hours + ":" + minutes + ":" + seconds;
+    document.getElementById( "clock" ).innerHTML = timeString;
+}
+
+setInterval( updateClock, 1000 );
