@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lab4</title>
+</head>
+
+<body>
+    <!-- task 2 -->
+    <div>
+        <h4>task 2</h4>
+        <p>Największy wspólny dzielnik</p>
+        <input id="n1" placeholder="Number one..."><br>
+        <input id="n2" placeholder="Number two..."><br>
+        <button type="submit" onclick="ReturnNWDToHtml()">Oblicz</button><br>
+        <h5 id="resultNWD"></h5>
+    </div>
+
+    <!-- task 3 -->
+    <form>
+        <h4>task 3</h4>
+        <label for="liczba1">Liczba 1:</label>
+        <input id="liczba1" name="liczba1"><br>
+
+        <label for="liczba2">Liczba 2:</label>
+        <input id="liczba2" name="liczba2"><br>
+
+        <label for="operacja">Operacja:</label>
+        <select id="operacja" name="operacja">
+            <option value="add">Dodawanie</option>
+            <option value="subtract">Odejmowanie</option>
+            <option value="multiply">Mnożenie</option>
+            <option value="division">Dzielenie</option>
+            <option value="pow">Potęgowanie</option>
+        </select><br>
+
+        <button type="button" onclick="oblicz()">Oblicz</button><br>
+
+        <label for="wynik">Wynik:</label>
+        <input id="wynik" readonly>
+    </form>
+
+    <!-- task 4 -->
+    <h4>task 3</h4>
+    <div id="clock"></div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
